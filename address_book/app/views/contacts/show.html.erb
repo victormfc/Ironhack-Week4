@@ -1,0 +1,22 @@
+<h4>Contact info:</h4>
+<p>Name: <%= @contact.name %> </p>
+<p>Address: <%= @contact.address %> </p>
+<p>Phone Number: <%= @contact.phone_number %> </p>
+<p>Email: <%= @contact.email %> </p>
+<% if @contact.avatar.url %>
+  <%= image_tag @contact.avatar.url %>
+<% end %>
+
+<% if @contact.favorite %>
+<h4>Unfavorite contact:</h4>
+<%= form_tag("/contacts/unfavorite", method: "post") do %>
+  <%= hidden_field_tag :id,  "#{@contact.id}" %>
+  <%= submit_tag :Unfavorite %>
+  <% end %>
+<% else %>
+<h4>Add as favorite:</h4>
+  <%= form_tag("/contacts/make_favorite", method: "post") do %>
+    <%= hidden_field_tag :id,  "#{@contact.id}" %>
+    <%= submit_tag :Favorite %>
+  <% end %>
+<% end %>

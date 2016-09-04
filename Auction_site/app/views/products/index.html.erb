@@ -1,0 +1,7 @@
+<h4>This is our list of new products:</h4>
+
+<ul>
+  <% @products.each do |product| %>
+    <li><%= product.title %></li>
+  <% end %>
+</ul>

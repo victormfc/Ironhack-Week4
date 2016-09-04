@@ -1,0 +1,9 @@
+<h4>This is our list of new users:</h4>
+
+<ul>
+  <% @users.each do |user| %>
+    <li><%= user.name %> - <%=link_to 'show user', "/users/#{user.id}"%></li>
+  <% end %>
+</ul>
+
+<%=link_to 'add user', '/users/new'%>

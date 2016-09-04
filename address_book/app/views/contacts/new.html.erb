@@ -1,0 +1,27 @@
+<h4>Add a new contact:</h4>
+
+<div class="add-format">
+  <%= form_for @contact, html: { multipart: true } do |f| %>
+    <div class="">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="">
+    <%= f.file_field :avatar %>
+    </div>
+    <div class="">
+      <%= f.label :address %>
+      <%= f.text_field :address %>
+    </div>
+      <div class="">
+        <%= f.label :phone_number %>
+        <%= f.text_field :phone_number %>
+      </div>
+      <div class="">
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </div>
+
+        <%= f.submit :Save %>
+  <% end %>
+</div>
